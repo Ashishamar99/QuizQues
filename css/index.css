@@ -1,0 +1,135 @@
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #111;
+}
+
+span{
+  float: left;
+  color: white;
+}
+
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.sidenav {
+height: 800px;
+width: 205px;
+float: left;
+overflow-y: hidden;
+position: absolute; /* Fixed Sidebar (stay in place on scroll) */
+/* z-index: 1; Stay on top
+top: 0; Stay at the top */
+left: 0;
+background-color: #111;
+}
+
+/* The navigation menu links */
+.sidenav a {
+padding: 6px 8px 6px 16px;
+text-decoration: none;
+font-size: 25px;
+color: #818181;
+display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+color: #f1f1f1;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+.sidenav {padding-top: 15px;}
+.sidenav a {font-size: 18px;}
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+z-index: 1;
+transform: translateY(-20%) translateX(-1%);
+top: 0;
+background-color: #111;
+overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+float: left;
+color: #f2f2f2;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+background-color: #ddd;
+color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+background-color: #4CAF50;
+color: white;
+}
+
+/* .contentpusherinner{
+  width: 600px;
+  height: 800px;
+  width: 200px;
+  float: left; 
+  background-color: cadetblue;
+} */
+
+.contentdiv{
+  background-color: #111;
+  height: 800px;
+  width: 1800px;
+  color: white;
+}
+
+/* Applying CSS to all the images inside hrefs (anchor tags) inside a table */
+table.lang_table td a img{
+  width: 100px; 
+  height: 100px;
+}
+
+.lang_table{
+  border-color: white;
+  margin-left: auto;
+  margin-right: 50%;
+  padding: 5px;
+}
+
+table.lang_table td{
+  width: 50%;
+}
+canvas.logo_canvas{
+  /* background-color: #111; */
+  float: left;
+  text-align: center;
+  /* Stay on top */
+  /* z-index: 1; 
+  top: 0; */
+}
+
+h2{
+  font-family: sans-serif;
+}
+
+#page_footer{
+  color: white;
+}
+
+.contentdiv #quizlinksdemo{
+  margin-left: auto;
+  text-align: center;
+  /* Try centering contents here */
+}

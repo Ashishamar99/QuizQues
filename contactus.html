@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!--JQ CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<script>
+    var uname = localStorage.getItem("Username")
+    if(uname=="john")
+        {
+            alert(uname + " is a valid user");
+        }
+    else
+    {
+        alert(uname + "is not a valid user");
+    }
+</script>
+<style>
+    body{
+        background-color: black;
+    }
+    p{
+        color: white;
+        font-size: 30px;
+        font-family: sans-serif;
+    }
+
+    .centerdiv {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border: 3px solid white;
+        padding: 50px;
+    }
+
+    div{
+        color: white;
+    }
+</style>
+<body>
+    <!--Draws the logo using a nav tag and a canvas tag-->
+    <script src="js/drawlogo.js"></script>
+
+    <div class="centerdiv">
+    <p><u>Legal Desk</u></p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1662.8312276411443!2d77.56726875790505!3d13.00173421115689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae162f553f8273%3A0x48c84ea94158baf0!2sLegalDesk.com!5e1!3m2!1sen!2sin!4v1617773168207!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1943.7655288590865!2d77.56725802668404!3d13.00181783454287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae162f553f8273%3A0x48c84ea94158baf0!2sLegalDesk.com!5e0!3m2!1sen!2sin!4v1617772722689!5m2!1sen!2sin" width="600" height="450" style="border: 5px;" allowfullscreen="" loading="lazy"></iframe> -->
+    
+    <br /><br /><br />
+    <div id="div1" draggable="true" ondragstart="dragstart()" ondragend="dragend()">Draggable Text</div>
+    <div>Non Draggable Text</div>
+
+    </div>
+</body>
+</html>

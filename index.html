@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+
+<script>
+    /* Open the sidenav */
+    function openNav() {
+        document.getElementById("mysidenav").style.width = "100%";
+    }
+
+    /* Close/hide the sidenav */
+    function closeNav() {
+        document.getElementById("mysidenav").style.width = "0";
+    }
+</script>
+
+<body onload="closeNav()">
+    <!--Draws the logo using a nav tag and a canvas tag-->
+    <script src="js/drawlogo.js"></script>
+
+    <nav>
+    <div class="topnav">
+        <a href="aboutus.html">About Us</a>
+        <a href="contactus.html">Contact Us</a>
+        <a href="admin.html">Admin</a>
+        <a href="login.html">Login</a>
+    </div>
+    </nav>
+
+    <br /><br /><br />
+    <div>
+        <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; Side Menu</span>
+    </div>
+    <br /><br /><br />
+    <hr />
+
+    <div id="mysidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="contactus.html">Contact Us</a>
+        <a href="admin.html">Admin</a>
+        <a href="login.html">Login</a>
+    </div>
+
+    <!-- <div style="width: 100%; overflow: hidden;"> -->
+        <!--Content pusher div-->
+        <!-- <div class="contentpusherinner">
+            <br /><br /><br /><br /> -->
+        <!-- </div> --> 
+        
+        <!--div Content-->
+        <div class="contentdiv">
+            <section id="quizlinksdemo">
+            <!-- <header id="page_header"> -->
+                <u><h2>Different Languages we have quizes on</h2></u>
+                    <table class="lang_table" border="2px">
+                    <tr>
+                        <td><a href="#"><img src="images/python icon.png"/></a></td>
+                        <td>Python</td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="#"><img src="images/java icon.jpg"/></a></td>
+                        <td>Java</td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="#"><img src="images/c++ icon.jfif"/></a></td>
+                        <td>C++</td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="#"><img src="images/js icon.jfif"/></a></td>
+                        <td>JS</td>
+                    </tr>
+                    </table>
+            <!-- </header> -->
+            </section>
+                <hr />
+                <section id="posts">
+                <article class="post">
+                    <header>
+                    <h3>We host quizes on these mentioned above languages.</h3>
+                    <div>
+                        Click on the desired image of the language to start the quiz.
+                    </div>
+                    </header>
+
+                    <!-- Aside Tag here for content desc -->
+                    <aside style="margin:10px;">
+                    <b><p> <i> This content is written in an aside tag</p> </i></b>
+                    <p>You can even have specialised access to the quizes based on user logins. And each user type is color coded as well as an extra benefit.</p>
+                    </aside> 
+                </article>
+                </section>
+                
+        </div>
+    <!-- </div> -->
+
+    <footer id="page_footer">
+        <p>Copyright © 2021 Quizques.</p><!--&#169;-->
+    </footer>
+</body>
+</html>

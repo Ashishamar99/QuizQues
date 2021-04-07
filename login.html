@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css"/>
+</head>
+
+<script>
+    function dobchanged(dobval){
+        alert("The Value Of DOB Changed To:: " + dobval)
+    }
+
+    function savecreds(){
+        var uname = document.getElementById("username").value;
+        localStorage.setItem("Username", uname);
+        alert(uname + " is stored in local storage");
+    }
+</script>
+<body>
+    <!--Draws the logo using a nav tag and a canvas tag-->
+    <script src="js/drawlogo.js"></script>
+    <div class="centerdiv">
+    <form>
+        First Name: <input type="text" name="firstname" /> <br /><br />
+        Last Name: <input type="text" name="lastname" /> <br /><br />
+        Username: <input type="text" id="username" /> <br /><br />
+        Password: <input type="password" name="password" /> <br /><br />
+        Confirm Password: <input type="password" name="confirmpass" /> <br /><br />
+        Email: <input type="email" name="mail" /> <br /><br />
+        DOB: <input type="date" name="dob" onchange="dobchanged(this.value)"/> <br /><br />
+        User Type: <input type="text" name="usertype"/> <br /><br />
+        User Color: <input type="color" name="usercolor" /> <br /><br />
+
+        Meter: <meter value="30" min="10" max="50"></meter> <br /><br />
+        Progress Bar: <progress min="0" max="100" value="30"></progress><br /><br />
+        <button type="submit" onclick="savecreds()">Submit</button><br /><br />
+    </form>
+    </div>
+</body>
+</html>

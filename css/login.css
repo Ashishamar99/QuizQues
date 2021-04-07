@@ -1,0 +1,37 @@
+body{
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+form
+{
+    color: white;
+    width: 300px;
+    margin: 0 auto;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+input{
+    font-family: sans-serif;
+    color: white;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 8px;
+}
+.centerdiv {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid white;
+    padding: 100px;
+}
+button{
+    border-radius: 10px;
+    float: right;
+    border: 3px solid white;
+    color: white;
+    font-size: 18px;
+    background-color:black;
+    font-family: sans-serif;
+}
