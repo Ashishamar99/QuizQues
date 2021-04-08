@@ -35,3 +35,9 @@ button{
     background-color:black;
     font-family: sans-serif;
 }
+
+.submit_button:hover{
+    background-color:seashell;
+    color: #111;
+    cursor: pointer;
+}

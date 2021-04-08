@@ -1,0 +1,34 @@
+    * {
+    font-family: Arial, Verdana, sans-serif;
+    color: #665544;
+    text-align: center;}
+
+    #nav{
+    background-color: #efefef;
+    margin-top: 20px;
+    padding: 10px 0px 5px 0px;}
+    
+    #feature{
+    background-color: #efefef;
+    margin-top: 20px;
+    padding: 10px 0px 5px 0px;
+    }
+
+    .article {
+        background-color: #efefef;
+        margin-top: 20px;
+        padding: 10px 0px 5px 0px;
+        }
+
+    #footer {
+    background-color: #efefef;
+    margin-top: 20px;
+    padding: 10px 0px 5px 0px;
+    }
+    
+    #feature{
+    height: auto;}
+    
+    li {
+    display: inline;
+    padding: 5px;}
