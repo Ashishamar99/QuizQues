@@ -1,0 +1,13 @@
+#contentbody{
+    background-color: black;
+    height: 100%;
+}
+
+#sidebarbody{
+    background-color: grey;
+    height: inherit max-content;
+}
+
+.admin_login_content{
+    color: white;
+}
