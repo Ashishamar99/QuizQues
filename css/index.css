@@ -1,7 +1,9 @@
 #contentbody{
-    background-color: blueviolet;
+    background-color: black;
+    height: 1000px;
 }
 
 #sidebarbody{
-    background-color: burlywood;
+    background-color: grey;
+    height: 1000px;
 }
