@@ -1,11 +1,11 @@
 #contentbody{
     background-color: black;
-    height: 100%;
+    height: 1000px;
 }
 
 #sidebarbody{
     background-color: grey;
-    height: inherit max-content;
+    height: 1000px;
 }
 
 .admin_login_content{
