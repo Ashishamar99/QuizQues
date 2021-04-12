@@ -1,0 +1,13 @@
+#contentbody{
+    background-color: black;
+    height: 1000px;
+}
+
+#sidebarbody{
+    background-color: grey;
+    height: 1000px;
+}
+
+form{
+    color: white;
+}
