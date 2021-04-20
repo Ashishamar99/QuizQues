@@ -1,0 +1,42 @@
+<p>{{greeting}}</p>
+<hr />
+<ul>
+    <li *ngFor = "let x of testNamesList">{{x}}</li>
+</ul>
+<hr />
+<table style="border: 2px solid;">
+
+    <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>No of Questions</th>
+        <th>Marks</th>
+    </thead>
+
+    <tr *ngFor = "let singletest of arrTest">
+        <td>{{singletest.id}}</td>
+        <td>{{singletest.testName}}</td>
+        <td>{{singletest.noOfQues}}</td>
+        <td>{{singletest.marks}}</td>
+    </tr>
+
+</table>
+<hr />
+<ul style="list-style-type: none;">
+    <li *ngFor = "let singletest of arrTest" style="display: inline-block; padding: 0px 10px 0px 10px;">
+
+        <div class="card text-white bg-dark" style="width: 18rem;">
+            <!-- <img src="..." class="card-img-top" alt="..."> -->
+            <div class="card-body">
+                <h5 class="card-title">{{singletest.testName}}</h5>
+                <!-- <p class="card-text"></p> -->
+                    <div>ID:: {{singletest.id}}</div>
+                    <div>No of Questions:: {{singletest.noOfQues}}</div>
+                    <div>Marks:: {{singletest.marks}}</div>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div><br /><br />
+
+    </li>
+</ul>
+<hr />

@@ -1,0 +1,74 @@
+    <form class="form" [formGroup]="testForm" (ngSubmit)="onSubmit()">
+        <fieldset>
+        <legend>Test Details</legend>
+        <div class="mb-3">
+        <label class="form-label" for="id">
+            Id
+        </label>
+        <select class="form-select"  id="id" formControlName="id" (change)="onChangeType($event,$event.target.value)">
+        <option selected>Select a value</option>
+        <option *ngFor="let test of testArr" [ngValue]="test.id" >{{ test.testName }}</option>
+        </select>
+        </div>
+        <div>
+        <label for="testName">
+            Name
+        </label>
+        <input id="testName" class="form-control" type="text" formControlName="testName">
+        </div>
+    
+        <div>
+        <label for="marks">
+            Marks
+        </label>
+        <input id="marks" class="form-control" type="number" formControlName="marks">
+        </div>
+    
+        <div>
+        <label for="noOfQues">
+            Number of Questions
+        </label>
+        <input id="noOfQues" class="form-control" type="number" formControlName="noOfQues">
+        </div>
+
+        <br />
+    
+        <button class="button btn-primary" type="submit">Add</button> &nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="button btn-primary" type="submit" disabled>Update</button>
+    
+    </fieldset>
+    </form>
+
+    <hr />
+
+    <form class="form" [formGroup]="subjectForm" (ngSubmit)="onSubjectSubmit()">
+        <fieldset>
+        <legend>Add Subject</legend>
+        <p>Id will be generated</p>
+        <div>
+        <label for="subjectName">
+            Subject Name
+        </label>
+        <input id="subjectName" class="form-control" type="text" formControlName="subjectName">
+        </div>
+    
+        <div>
+        <label for="subjectMarks">
+            Subject Marks
+        </label>
+        <input id="subjectMarks" class="form-control" type="number" formControlName="subjectMarks">
+        </div>
+    
+        <div>
+        <label for="noOfQuesForSubject">
+            Number of Questions For Subject
+        </label>
+        <input id="noOfQuesForSubject" class="form-control" type="number" formControlName="noOfQuesForSubject">
+        </div>
+    
+        <br />
+        
+        <button class="button btn-primary" type="submit">Add Subject</button>
+    
+    </fieldset>
+    </form>
