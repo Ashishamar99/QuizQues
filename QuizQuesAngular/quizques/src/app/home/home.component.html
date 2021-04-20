@@ -14,7 +14,9 @@
             </div>
 
             <div class="col-md-9" id="content">
-                <app-content></app-content>
+
+                <button type="button" class="btn btn-primary" (click)="respondToEvent()">Emit Multiple Events.</button>
+                <app-content [msgArr] = msgArr></app-content>
                 
             </div>
 

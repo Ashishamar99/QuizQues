@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Test } from 'src/models/test';
 
 @Component({
@@ -8,10 +8,14 @@ import { Test } from 'src/models/test';
 })
 export class ContentComponent implements OnInit {
 
+  @Input() msgFromHome = 'Default Message';
+  @Input() msgArr = ['one', 'two', 'threewwwww'];
+
   testNames: string[] = ['Python', 'JS', 'C++']; //Another way of initialising vars.
   testNamesList = ['Python', 'JS', 'C++'];
   greeting: string;
   arrTest: Test[] = [];
+  contentNotiCount: number = 0; //Step 6. Step 7 in same file.
 
   constructor() { 
     this.greeting = 'Hello from the other side';
@@ -23,6 +27,11 @@ export class ContentComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  notificationReceived(notiCount: number){                            //Step 7
+    this.contentNotiCount = this.contentNotiCount + notiCount;
+    console.log( `Total Notifications:: ${this.contentNotiCount}`)
   }
 
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Test } from 'src/models/test';
 import { TestService } from '../services/testservice';
@@ -12,6 +13,7 @@ export class TestComponent implements OnInit {
 
   testArr: Test[] = [];
   testService: TestService; //testService is the variable we use.
+  @Output() addNotificationCount: EventEmitter<number>; //Step 1
 
   testForm = new FormGroup({
     id: new FormControl('Select a value'),
@@ -28,10 +30,16 @@ export class TestComponent implements OnInit {
   
   constructor(testServiceParam: TestService) {
     this.testService = testServiceParam; 
+
+    this.addNotificationCount = new EventEmitter<number>(); //Step 2
   }
 
   ngOnInit(): void {
     this.getAllTests();
+  }
+
+  addNotification(){                                   //Step 3 // Method to call and generate these notifications. //Step 4 in test.component.html
+    this.addNotificationCount.emit(1);
   }
 
   getAllTests(){

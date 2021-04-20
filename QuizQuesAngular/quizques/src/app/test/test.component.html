@@ -1,3 +1,7 @@
+    
+    <!--Step 4 // Step 5 in content.component.html-->
+    <button type="button" class="btn btn-primary" (click)="addNotification()">Generate Notification (Emit Notification Event.)</button>
+
     <form class="form" [formGroup]="testForm" (ngSubmit)="onSubmit()">
         <fieldset>
         <legend>Test Details</legend>
@@ -69,6 +73,7 @@
         <br />
         
         <button class="button btn-primary" type="submit">Add Subject</button>
-    
+        
+        <hr />
     </fieldset>
     </form>
