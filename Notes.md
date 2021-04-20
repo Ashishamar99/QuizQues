@@ -111,5 +111,25 @@ Day 10
         this.testService = testServiceParam; 
     }
 ```
-- After the 
+- After this, we can use the methods of the service likeso,
+```
+ngOnInit(): void {
+    this.getAllTests();
+  }
+
+  getAllTests(){
+    this.testArr = this.testService.getTests();
+    console.log(this.testArr);
+  }
+  //Custom Methods !!!
+```
+
+- #### Note - Hierarchy of the components are AppComponent < HomeComponent < Content Component. [From Outer most to inner most components].
+
+#### Input from components.
+- Here, we will try sending an item from outer component to inner component.
+- Write Desc.
+#### Angular Events.
+- We will try sending an event from an inner component to an outer component.
+- First we import from angular core and not node:events. ```import { EventEmitter} from '@angular/core';```
 ----------------------------------------------------------------------------------------------------------------------------------------
