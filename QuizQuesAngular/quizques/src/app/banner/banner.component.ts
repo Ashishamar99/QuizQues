@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 
-@Component({
-  selector: 'app-banner',
-  templateUrl: './banner.component.html',
-  styleUrls: ['./banner.component.scss']
-})
-export class BannerComponent implements OnInit {
+    @Component({
+    selector: 'app-banner',
+    templateUrl: './banner.component.html',
+    styleUrls: ['./banner.component.scss']
+    })
+    export class BannerComponent implements OnInit {
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
-  getSelectedLogin(uname, passwd, loginval) {
+    getSelectedLogin(uname, passwd, loginval) {
 
     var selectedUser = loginval;
 
