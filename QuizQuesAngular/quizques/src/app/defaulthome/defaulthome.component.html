@@ -14,10 +14,12 @@
     </thead>
 
     <tr *ngFor = "let singletest of arrTest">
-        <td>{{singletest.id}}</td>
-        <td>{{singletest.testName}}</td>
-        <td>{{singletest.noOfQues}}</td>
-        <td>{{singletest.marks}}</td>
+        <ng-container *ngIf="checkMarks(singletest.marks)">
+            <td>{{singletest.id}}</td>
+            <td>{{singletest.testName}}</td>
+            <td>{{singletest.noOfQues}}</td>
+            <td>{{singletest.marks}}</td>
+        </ng-container>
     </tr>
 
 </table>
@@ -39,4 +41,14 @@
 
     </li>
 </ul>
+<hr />
+<h3>ngSwitch</h3>
+<label>Enter a letter:: </label> <br />
+<input maxlength="1" #inpID (input)=switchFunc(inpID.value)/> <br />
+
+<div [ngSwitch] = "letterinp">
+    <div *ngSwitchCase="'A'">Var is A</div>
+    <div *ngSwitchCase="'B'">Var is B</div>
+    <div *ngSwitchDefault>Var is {{letterinp}}</div>
+</div>
 <hr />

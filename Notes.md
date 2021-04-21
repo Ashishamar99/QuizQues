@@ -237,6 +237,11 @@ notificationReceived(notiCount: number){                            //Step 7
 Day 11
 - Built in Directives -> https://angular.io/guide/built-in-directivesX
 
+- We can use the ```(input)``` function to call a function everytime input is changed. An example implementation is given below.
+```
+<input maxlength="1" #inpID (input)=switchFunc(inpID.value)/> <br />
+```
+
 - Attribute Directives are
   - ```NgClass``` — adds and removes a set of CSS classes.
   - ```NgStyle``` — adds and removes a set of HTML styles.

@@ -12,6 +12,7 @@ export class DefaulthomeComponent implements OnInit {
   testNamesList = ['Python', 'JS', 'C++'];
   greeting: string;
   arrTest: Test[] = [];
+  letterinp: string;
   
   constructor() { 
     this.greeting = 'Hello from the other side';
@@ -23,6 +24,15 @@ export class DefaulthomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  checkMarks(mrks){
+    return mrks > 10;
+  }
+
+  switchFunc(val){
+    console.log(val);
+    this.letterinp = val;
   }
 
 }
