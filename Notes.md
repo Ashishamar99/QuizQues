@@ -244,11 +244,31 @@ Day 11
 
 - Attribute Directives are
   - ```NgClass``` — adds and removes a set of CSS classes.
-  - ```NgStyle``` — adds and removes a set of HTML styles.
+  - ```NgStyle``` — adds and removes a set of HTML styles. <Try this yourself>
   - ```NgModel``` — adds two-way data binding to an HTML form element.
 
 - Structural Directives are
   - ```NgIf``` — conditionally creates or disposes of subviews from the template.
   - ```NgFor``` — Repeat a node for each item in a list.
   - ```NgSwitch``` — A set of directives that switch among alternative views.
+
+- Form Builders. We will use form builders as they are more economical than form groups. And adding validators is easier in form builders. We will be injecting the form builder in the constructor so as to load it whenever we want.
+
+Injecting Form Builder using a variable parameter. Using a private access specifier.
+```
+constructor(testServiceParam: TestService, private formBuilder: FormBuilder) {
+...
+...
+  }
+```
+- Validating Forms -> https://angular.io/guide/form-validation
+- We have to import ```Validators``` from ```'@angular/forms'``` . And use them like so,
+```
+testForm = this.formBuilder.group({
+    id: 0,
+    testName: ['', Validators.required],
+    marks: 0,
+    noOfQues: 0
+  });
+```
 ----------------------------------------------------------------------------------------------------------------------------------------
