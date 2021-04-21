@@ -124,9 +124,9 @@ ngOnInit(): void {
   //Custom Methods !!!
 ```
 
-- #### Note - Hierarchy of the components are App Component < Home Component < Content Component. [From Outer most to inner most components].
+- ### Note - Hierarchy of the components are App Component < Home Component < Content Component. [From Outer most to inner most components].
 
-#### Input from components.
+#### Input to inner component from outer component.
 - Here, we will try sending an item from outer component to inner component.
 - Let's say we have a string or an array to pass from HomeComponent to Content Component. 
 - We use the decorator @Input() in the child component [Here, child component is Content Component].
@@ -233,4 +233,8 @@ notificationReceived(notiCount: number){                            //Step 7
     console.log( `Total Notifications:: ${this.contentNotiCount}`)
   }
 ```
+----------------------------------------------------------------------------------------------------------------------------------------
+Day 11
+-
+
 ----------------------------------------------------------------------------------------------------------------------------------------
