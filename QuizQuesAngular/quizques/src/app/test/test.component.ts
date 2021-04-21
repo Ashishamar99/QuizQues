@@ -57,7 +57,48 @@ export class TestComponent implements OnInit {
         this.testForm.reset();
     }
 
-    onChangeType(event, id){
-        console.log(id);
+    onChangeType(event, passedId){
+        console.log(passedId);
+
+        let RefTestArr = this.testArr;
+        RefTestArr.forEach(testElement => {
+
+            console.log('in for loop', testElement.id == Number(passedId.split(':')[0]), `testelementid = ${testElement.id}, passedid = ${Number(passedId.split(':')[0])}`);
+            if(testElement.id == Number(passedId.split(':')[0])){
+
+                this.testForm.get('testName').setValue(testElement.testName);
+                this.testForm.get('marks').setValue(testElement.marks);
+                this.testForm.get('noOfQues').setValue(testElement.noOfQues);
+            }
+        });
+        console.log(this.testArr);
+        
     }
+
+    updateValues(idSelector,testNameInp,marksInp,noOfQuesInp){
+
+        let passedID = idSelector.options[idSelector.selectedIndex].value;
+        let passedtestNameInp = testNameInp.value;
+        let passedmarksInp = parseInt(marksInp.value);
+        let passednoOfQuesInp = parseInt(noOfQuesInp.value);
+
+        console.log(`New values = ${passedID}, ${passedtestNameInp}, ${passedmarksInp}, ${passednoOfQuesInp}`)
+        let RefTestArr = this.testArr;
+        RefTestArr.forEach(singleTest => {
+
+            if(singleTest.id == Number(passedID.split(':')[0])){
+
+                singleTest.testName = passedtestNameInp;
+                singleTest.marks = passedmarksInp;
+                singleTest.noOfQues = passednoOfQuesInp;
+            }
+        });
+
+        console.log('Updated Values = ', this.testArr);
+    }
+
+    checkMarks(mrks){
+        return mrks > 10;
+    }
+
 }

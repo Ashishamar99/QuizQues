@@ -1,15 +1,57 @@
     
     <!--Step 4 // Step 5 in content.component.html-->
     <button type="button" class="btn btn-primary" (click)="addNotification()">Generate Notification (Emit Notification Event.)</button>
+    
+    <br /><hr />
+
+    <table class="table table-dark table-striped">
+
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>No of Questions</th>
+            <th>Marks</th>
+            <th>Action</th>
+        </thead>
+    
+        <tr *ngFor = "let singletest of testArr">
+            <ng-container *ngIf="checkMarks(singletest.marks)">
+                <td>{{singletest.id}}</td>
+                <td>{{singletest.testName}}</td>
+                <td>{{singletest.noOfQues}}</td>
+                <td>{{singletest.marks}}</td>
+                <button type="button" [routerLink]="['/viewtest', singletest.id]" class="btn btn-primary">View Test Details.</button>
+            </ng-container>
+        </tr>
+    
+    </table>
+    <hr />
 
     <form class="form" [formGroup]="testForm" (ngSubmit)="onSubmit()">
         <fieldset>
         <legend>Test Details</legend>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+                Check this to Add
+            </label>
+            
+            <br />
+
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+            <label class="form-check-label" for="flexRadioDefault2">
+                Check this to Update
+            </label>
+        </div>
+
+        <br />
+
         <div class="mb-3">
         <label class="form-label" for="id">
             Id
         </label>
-        <select class="form-select"  id="id" formControlName="id" (change)="onChangeType($event,$event.target.value)">
+        <select class="form-select" #idSelector  id="id" formControlName="id" (change)="onChangeType($event,$event.target.value)">
         <option selected>Select a value</option>
         <option *ngFor="let test of testArr" [ngValue]="test.id" >{{ test.testName }}</option>
         </select>
@@ -22,27 +64,27 @@
         <label for="testName">
             Name
         </label>
-        <input id="testName" class="form-control" type="text" formControlName="testName">
+        <input #testNameInp id="testName" class="form-control" type="text" formControlName="testName">
         </div>
     
         <div>
         <label for="marks">
             Marks
         </label>
-        <input id="marks" class="form-control" type="number" formControlName="marks">
+        <input #marksInp id="marks" class="form-control" type="number" formControlName="marks">
         </div>
     
         <div>
         <label for="noOfQues">
             Number of Questions
         </label>
-        <input id="noOfQues" class="form-control" type="number" formControlName="noOfQues">
+        <input #noOfQuesInp id="noOfQues" class="form-control" type="number" formControlName="noOfQues">
         </div>
 
         <br />
     
         <button class="button btn-primary" type="submit">Add</button> &nbsp;&nbsp;&nbsp;&nbsp;
-        <button class="button btn-primary" type="submit" disabled>Update</button>
+        <button class="button btn-primary" type="submit" (click)=updateValues(idSelector,testNameInp,marksInp,noOfQuesInp)>Update</button>
     
     </fieldset>
     </form>

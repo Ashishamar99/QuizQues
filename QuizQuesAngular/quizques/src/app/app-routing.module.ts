@@ -10,6 +10,7 @@ import { QuestionComponent } from './question/question.component';
 import { StudentComponent } from './student/student.component';
 import { TestComponent } from './test/test.component';
 import { UserComponent } from './user/user.component';
+import { ViewtestComponent } from './viewtest/viewtest.component';
 
 const routes: Routes = [
   {path: '', component: DefaulthomeComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'faculty', component: FacultyComponent, canActivate: [FacultyGuard]},
   {path: 'question', component: QuestionComponent},
   {path: 'admin', component: AdminComponent, canActivate: [QuizGuard, FacultyGuard, StudentGuard]},
-  {path: 'student', component: StudentComponent, canActivate: [StudentGuard]}
+  {path: 'student', component: StudentComponent, canActivate: [StudentGuard]},
+  {path: 'viewtest/:id', component: ViewtestComponent}
 ];
 
 @NgModule({

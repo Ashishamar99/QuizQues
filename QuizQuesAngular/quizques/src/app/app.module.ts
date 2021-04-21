@@ -19,6 +19,7 @@ import { StudentGuard } from './common/studentguard';
 import { FacultyGuard } from './common/facultyguard';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TestService } from './services/testservice';
+import { ViewtestComponent } from './viewtest/viewtest.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { TestService } from './services/testservice';
     SidebarComponent,
     ContentComponent,
     DefaulthomeComponent,
-    AdminComponent
+    AdminComponent,
+    ViewtestComponent
   ],
   imports: [
     BrowserModule,
