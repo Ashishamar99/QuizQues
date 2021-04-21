@@ -60,7 +60,7 @@ export class TestComponent implements OnInit {
   }
 
   onSubjectSubmit(){
-    console.warn('Test details have been submitted', this.subjectForm.value);
+    console.warn('Subject details have been submitted', this.subjectForm.value);
     this.subjectForm.reset();
   }
 
