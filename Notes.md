@@ -129,7 +129,7 @@ ngOnInit(): void {
 #### Input to inner component from outer component.
 - Here, we will try sending an item from outer component to inner component.
 - Let's say we have a string or an array to pass from HomeComponent to Content Component. 
-- We use the decorator @Input() in the child component [Here, child component is Content Component].
+- We use the decorator ```@Input()``` in the child component [Here, child component is Content Component].
 - We display the same in the same way we do in case of string interpolation. (We use a ```*ngFor``` for iterables and ```{{}}``` for variables or non-iterables).
 - If we don't send data from parent component [Here, parent component is Home Component] to child component the data displayed is the default initialised value which is given while declaring it in the child component.
 - __IMPORTANT NOTE :: The variable name given in parent component should be the same when declared in the child component.__
@@ -235,6 +235,15 @@ notificationReceived(notiCount: number){                            //Step 7
 ```
 ----------------------------------------------------------------------------------------------------------------------------------------
 Day 11
--
+- Built in Directives -> https://angular.io/guide/built-in-directivesX
 
+- Attribute Directives are
+  - ```NgClass``` — adds and removes a set of CSS classes.
+  - ```NgStyle``` — adds and removes a set of HTML styles.
+  - ```NgModel``` — adds two-way data binding to an HTML form element.
+
+- Structural Directives are
+  - ```NgIf``` — conditionally creates or disposes of subviews from the template.
+  - ```NgFor``` — Repeat a node for each item in a list.
+  - ```NgSwitch``` — A set of directives that switch among alternative views.
 ----------------------------------------------------------------------------------------------------------------------------------------
