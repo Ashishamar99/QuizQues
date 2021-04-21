@@ -65,7 +65,21 @@ Day 8
 Day 9
 - Under app.json inside architect -> //Order of scripts -> jq, popper, boot
 - Under app.son inside architect -> //Styles.scss, and bootstrap css
-- Angular routing.
+
+#### Angular routing.
+- Create the component you want.
+- Next, go to ```app-routing.module.ts``` (this will be available when we choose 'yes' for app-routing when creating the app).
+- Inside the ```Routes``` array, paste the path to the component. As shown below.
+```
+{path: 'user', component: UserComponent}
+```
+- Here the ```path``` variable holds the string value that connects the components.
+- Go to the desired page where you want the button or anchor tag to route and apply the attribute ```routerLink``` as shown. (The path prefixed by a forward slash).
+```
+<a class="nav-link" routerLink="/user">User Component</a>
+```
+- Finally, where ever you want the router output to show, use the tag ```<router-outlet></router-outlet>```. Here we have used it in the ```content.component.html``` file. As all our content needs to be replaced inside this very component.
+
 - Make a folder called 'common' and under that folder, we can put our guard.ts files
 
 #### Creating Guards
@@ -262,6 +276,7 @@ constructor(testServiceParam: TestService, private formBuilder: FormBuilder) {
   }
 ```
 - Validating Forms -> https://angular.io/guide/form-validation
+- Validators -> https://angular.io/api/forms/Validators
 - We have to import ```Validators``` from ```'@angular/forms'``` . And use them like so,
 ```
 testForm = this.formBuilder.group({
@@ -271,7 +286,7 @@ testForm = this.formBuilder.group({
     noOfQues: 0
   });
 ```
-- ### We converted the array in ```Services\testservice.ts``` to static so that whenever a new test is added, we can make sure that that change stays in the array. [Check Commit History here.](https://github.com/Ashishamar99/QuizQues/commit/b300ed752914b3f658f42971918df8bbd37379ea#diff-1b9e1e5297123b0d1a332272877f04d7694252181b640c5c00f9486dafb9701d)
+- ### We converted the array in ```Services\testservice.ts``` to static so that whenever a new test is added, we can make sure that that change stays in the array. [**Check Commit History here.**](https://github.com/Ashishamar99/QuizQues/commit/b300ed752914b3f658f42971918df8bbd37379ea#diff-1b9e1e5297123b0d1a332272877f04d7694252181b640c5c00f9486dafb9701d)
 
 #### Data passing with routing components.
 - Let's say we want to pass the test IDs while routing. While generating the table, we will put a button as another td. 
@@ -283,4 +298,10 @@ testForm = this.formBuilder.group({
 ```
 {path: 'viewtest/:id', component: ViewtestComponent}
 ```
+- ### [Commenting out Interpolation in content.component.html, Check commit history here](https://github.com/Ashishamar99/QuizQues/commit/9d88c64414932f76874d59ffbb625a65281f5fa7#diff-7df3f7f25ed37d5ba153dfdcad71924294a8d6a16251b0422ebdc7b7d59e27be)
+
+- ### [Commenting the Emitting event code in home component. Check Commit History Here.](https://github.com/Ashishamar99/QuizQues/commit/b1c494041f2c194bc5f7b21885ca7d4927d10197)
+----------------------------------------------------------------------------------------------------------------------------------------
+Day 12
+
 ----------------------------------------------------------------------------------------------------------------------------------------
