@@ -15,6 +15,10 @@
         </select>
         </div>
         <div>
+            <!-- Form Validator for testName, Here -->
+            <div *ngIf="this.testForm.hasError('required', 'testName')">
+                <span>Test Name Can't be Empty</span>
+            </div>
         <label for="testName">
             Name
         </label>
@@ -45,7 +49,7 @@
 
     <hr />
 
-    <form class="form" [formGroup]="subjectForm" (ngSubmit)="onSubjectSubmit()">
+    <!-- <form class="form" [formGroup]="subjectForm" (ngSubmit)="onSubjectSubmit()">
         <fieldset>
         <legend>Add Subject</legend>
         <p>Id will be generated</p>
@@ -76,4 +80,4 @@
         
         <hr />
     </fieldset>
-    </form>
+    </form> -->
