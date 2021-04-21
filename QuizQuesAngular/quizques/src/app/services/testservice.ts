@@ -5,10 +5,10 @@ import { Test } from "src/models/test";
 
 export class TestService{
     
-        arrTests: Test[] = [];
+    static arrTests: Test[] = [];
     
     constructor() { 
-        this.arrTests = [
+        TestService.arrTests = [
         new Test(1, 'Python', 20, 10),
         new Test(2, 'JS', 10, 5),
         new Test(3, 'C++', 25, 25)
@@ -16,6 +16,6 @@ export class TestService{
     }
 
     getTests(){
-        return this.arrTests;
+        return TestService.arrTests;
     }
 }
