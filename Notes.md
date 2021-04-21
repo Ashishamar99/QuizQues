@@ -271,4 +271,16 @@ testForm = this.formBuilder.group({
     noOfQues: 0
   });
 ```
+- ### We converted the array in ```Services\testservice.ts``` to static so that whenever a new test is added, we can make sure that that change stays in the array. (Check Commit History here.)[https://github.com/Ashishamar99/QuizQues/commit/b300ed752914b3f658f42971918df8bbd37379ea#diff-1b9e1e5297123b0d1a332272877f04d7694252181b640c5c00f9486dafb9701d]
+
+#### Data passing with routing components.
+- Let's say we want to pass the test IDs while routing. While generating the table, we will put a button as another td. 
+- For the routing link, we add the id and that will be passed as the parameter.
+```
+<button type="button" [routerLink]="['/viewtest', singletest.id]" class="btn btn-primary">View Test Details.</button>
+```
+- In ```app-routing.module.ts```, the path will be modified like so. With the slash and the id parameter.
+```
+{path: 'viewtest/:id', component: ViewtestComponent}
+```
 ----------------------------------------------------------------------------------------------------------------------------------------
