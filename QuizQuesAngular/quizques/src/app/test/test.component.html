@@ -31,19 +31,34 @@
         <fieldset>
         <legend>Test Details</legend>
 
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
-                Check this to Add
-            </label>
+        <div>
+            <form>
+                <input type="radio" name="choice" #AddButtonRadio id="AddButtonRadio" value="add" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Check this to Add
+                </label>
+                <br />
+
+                <input type="radio" name="choice" #UpdateButtonRadio id="UpdateButtonRadio" value="update">
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Check this to Update
+                </label>
+
+                <br /><br />
+
+                <input type="button" class="btn btn-primary" (click)=confirmAction(UpdateButtonRadio,AddButtonRadio,updateAction,addAction) id="btn" value="Confirm the action">
+            </form>
+        </div>
+        <!-- <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="AddButtonRadio" checked>
+            <input type="radio" name="choice" value="yes">
+            
             
             <br />
 
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-            <label class="form-check-label" for="flexRadioDefault2">
-                Check this to Update
-            </label>
-        </div>
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="UpdateButtonRadio">
+            
+        </div> -->
 
         <br />
 
@@ -83,8 +98,8 @@
 
         <br />
     
-        <button class="button btn-primary" type="submit">Add</button> &nbsp;&nbsp;&nbsp;&nbsp;
-        <button class="button btn-primary" type="submit" (click)=updateValues(idSelector,testNameInp,marksInp,noOfQuesInp)>Update</button>
+        <button class="button btn-primary" #addAction type="submit">Add</button> &nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="button btn-primary" #updateAction type="button" (click)=updateTest(idSelector,testNameInp,marksInp,noOfQuesInp)>Update</button>
     
     </fieldset>
     </form>

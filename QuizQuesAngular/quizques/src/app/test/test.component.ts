@@ -34,6 +34,26 @@ export class TestComponent implements OnInit {
         this.getAllTests();
     }
 
+    //adduser,updateuser,getuser,inactivateuser.
+    
+    confirmAction(updatebtn, addbtn, updateAction, addAction){
+
+        let isUpdateChecked = updatebtn.checked;
+        let isAddChecked = addbtn.checked;
+
+        if(isAddChecked){
+            updateAction.disabled = true;
+            addAction.disabled = false;
+        }
+        else if(isUpdateChecked){
+            addAction.disabled = true;
+            updateAction.disabled = false;
+        }
+        else{
+            console.log('Will never fall here');
+        }
+    }
+
     addNotification(){
         this.addNotificationCount.emit(1);
     }
@@ -46,13 +66,15 @@ export class TestComponent implements OnInit {
     onSubmit(){
         let valSubmitted = this.testForm.value;
         console.warn('Test details have been submitted', valSubmitted);
-        console.log('Test Name Required Check ' + this.testForm.hasError('required', 'testName'));
+        //console.log('Test Name Required Check ' + this.testForm.hasError('required', 'testName'));
     
         let arrLastId = this.testArr.reverse()[0].id + 1;
         this.testArr.reverse();
         let t = new Test(arrLastId, valSubmitted.testName, valSubmitted.marks, valSubmitted.noOfQues);
-        this.testArr.push(t);
-        console.log('New testArr = ', this.testArr)
+        // this.testArr.push(t);
+        // console.log('New testArr = ', this.testArr) //Adding new test in temporary array.
+        
+        this.testService.addTest(t); // Adding new test in the testService.
     
         this.testForm.reset();
     }
@@ -75,7 +97,7 @@ export class TestComponent implements OnInit {
         
     }
 
-    updateValues(idSelector,testNameInp,marksInp,noOfQuesInp){
+    updateTest(idSelector,testNameInp,marksInp,noOfQuesInp){
 
         let passedID = idSelector.options[idSelector.selectedIndex].value;
         let passedtestNameInp = testNameInp.value;

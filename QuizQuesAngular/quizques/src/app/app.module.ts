@@ -20,6 +20,8 @@ import { FacultyGuard } from './common/facultyguard';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TestService } from './services/testservice';
 import { ViewtestComponent } from './viewtest/viewtest.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { ViewtestComponent } from './viewtest/viewtest.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatSliderModule
   ],
   providers: [QuizGuard, StudentGuard, FacultyGuard, TestService],
   bootstrap: [AppComponent]
