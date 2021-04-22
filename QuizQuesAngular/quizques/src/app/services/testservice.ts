@@ -32,11 +32,23 @@ export class TestService{
         TestService.arrTests.forEach(t => {
             let vid = data.id;
             if(t.id == vid){
+                console.log(`Updating Test in Test Service for ID ${vid}`);
                 t.testName = data.testName;
                 t.marks = data.marks;
                 t.noOfQues = data.noOfQues;
+                t.activeStatus = data.activeStatus;
             }
 
         });
     }
+
+    // changeStatus(givenStatus: boolean, data: Test){
+    //     TestService.arrTests.forEach(t => {
+    //         let vid = data.id;
+
+    //         if(t.id == vid){
+    //             t.activeStatus = givenStatus;
+    //         }
+    //     })
+    // }
 }

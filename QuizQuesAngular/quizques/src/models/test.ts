@@ -3,6 +3,7 @@ export class Test{
     testName: number;
     marks: number;
     noOfQues: number;
+    activeStatus = true;
 
     constructor(id, testName, marks, noOfQues)
     {

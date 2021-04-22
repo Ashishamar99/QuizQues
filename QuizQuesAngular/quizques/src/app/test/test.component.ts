@@ -15,6 +15,7 @@ export class TestComponent implements OnInit {
     testArr: Test[] = [];
     testService: TestService;
     @Output() addNotificationCount: EventEmitter<number>;
+    disArr: Test[] =[];
 
     testForm = this.formBuilder.group({
         id: 0,
@@ -22,6 +23,11 @@ export class TestComponent implements OnInit {
         marks: 0,
         noOfQues: 0
         });
+
+    subjectForm = this.formBuilder.group({
+        subid: 0,
+        subjectName: '',
+    });
 
     constructor(testService: TestService, private formBuilder: FormBuilder) {
         this.testService = testService; 
@@ -32,6 +38,21 @@ export class TestComponent implements OnInit {
         
     ngOnInit(): void {
         this.getAllTests();
+    }
+
+    onSubjectSubmit()
+    {
+        let subjectValSubmitted = this.subjectForm.value.subjectName;
+        console.warn('Subject details have been submitted', subjectValSubmitted);
+
+        let arrLastId = this.testArr.reverse()[0].id + 1;
+        this.testArr.reverse();
+
+        let t = new Test(arrLastId, subjectValSubmitted, 0, 0);
+        
+        this.testService.addTest(t); // Adding new test in the testService.
+    
+        this.subjectForm.reset();
     }
 
     //adduser,updateuser,getuser,inactivateuser.
@@ -97,14 +118,25 @@ export class TestComponent implements OnInit {
         
     }
 
-    updateTest(idSelector,testNameInp,marksInp,noOfQuesInp){
+    updateTest(idSelector,testNameInp,marksInp,noOfQuesInp,statusSelector){
 
         let passedID = idSelector.options[idSelector.selectedIndex].value;
         let passedtestNameInp = testNameInp.value;
         let passedmarksInp = parseInt(marksInp.value);
         let passednoOfQuesInp = parseInt(noOfQuesInp.value);
+        let passedStatusSelector = statusSelector.options[statusSelector.selectedIndex].value;
 
-        console.log(`New values = ${passedID}, ${passedtestNameInp}, ${passedmarksInp}, ${passednoOfQuesInp}`)
+        //Values from the status selector are in the form of strings. We will assign boolean values.
+
+        if(passedStatusSelector == "true"){
+            passedStatusSelector = true;
+        }
+        else{
+            passedStatusSelector = false;
+        }
+        
+
+        console.log(`New values = ${passedID}, ${passedtestNameInp}, ${passedmarksInp}, ${passednoOfQuesInp}, ${passedStatusSelector}`)
         let RefTestArr = this.testArr;
         RefTestArr.forEach(singleTest => {
 
@@ -113,10 +145,32 @@ export class TestComponent implements OnInit {
                 singleTest.testName = passedtestNameInp;
                 singleTest.marks = passedmarksInp;
                 singleTest.noOfQues = passednoOfQuesInp;
+                singleTest.activeStatus = passedStatusSelector;
             }
         });
 
         console.log('Updated Values = ', this.testArr);
+
+        let t = new Test(passedID, passedtestNameInp, passedmarksInp, passednoOfQuesInp);
+        t.activeStatus = passedStatusSelector;
+        this.testService.updateTest(t);
+
+        this.updateArr();
+    }
+
+    updateArr(){
+
+        this.testArr.forEach(element => {
+            if(element.activeStatus == false){
+                this.disArr.push(element);
+                
+                this.testArr = this.testArr.filter(function(value, index, arr){ 
+                    return value != element;
+                });
+            }
+        });
+
+        console.log(this.disArr);
     }
 
     checkMarks(mrks){

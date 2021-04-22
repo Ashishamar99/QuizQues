@@ -1,6 +1,6 @@
     
     <!--Step 4 // Step 5 in content.component.html-->
-    <button type="button" class="btn btn-primary" (click)="addNotification()">Generate Notification (Emit Notification Event.)</button>
+    <!-- <button type="button" class="btn btn-primary" (click)="addNotification()">Generate Notification (Emit Notification Event.)</button> -->
     
     <br /><hr />
 
@@ -66,9 +66,10 @@
         <label class="form-label" for="id">
             Id
         </label>
+        
         <select class="form-select" #idSelector  id="id" formControlName="id" (change)="onChangeType($event,$event.target.value)">
         <option selected>Select a value</option>
-        <option *ngFor="let test of testArr" [ngValue]="test.id" >{{ test.testName }}</option>
+        <option *ngFor="let test of testArr" [ngValue]="test.id" [disabled]="test.activeStatus == false">{{ test.testName }}</option>
         </select>
         </div>
         <div>
@@ -98,15 +99,26 @@
 
         <br />
     
+        <div>
+            <label> Status </label>
+            <select class="form-select" name="statusSelector" #statusSelector>
+                <option value=true selected>Enable</option>
+                <option value=false>Disable</option>
+            </select>
+        </div>
+
         <button class="button btn-primary" #addAction type="submit">Add</button> &nbsp;&nbsp;&nbsp;&nbsp;
-        <button class="button btn-primary" #updateAction type="button" (click)=updateTest(idSelector,testNameInp,marksInp,noOfQuesInp)>Update</button>
+        <button class="button btn-primary" #updateAction type="button" (click)=updateTest(idSelector,testNameInp,marksInp,noOfQuesInp,statusSelector)>Update</button>
+
+        <br />
+        
     
     </fieldset>
     </form>
 
     <hr />
 
-    <!-- <form class="form" [formGroup]="subjectForm" (ngSubmit)="onSubjectSubmit()">
+    <form class="form" [formGroup]="subjectForm" (ngSubmit)="onSubjectSubmit()">
         <fieldset>
         <legend>Add Subject</legend>
         <p>Id will be generated</p>
@@ -117,7 +129,7 @@
         <input id="subjectName" class="form-control" type="text" formControlName="subjectName">
         </div>
     
-        <div>
+        <!-- <div>
         <label for="subjectMarks">
             Subject Marks
         </label>
@@ -131,10 +143,10 @@
         <input id="noOfQuesForSubject" class="form-control" type="number" formControlName="noOfQuesForSubject">
         </div>
     
-        <br />
+        <br /> -->
         
         <button class="button btn-primary" type="submit">Add Subject</button>
         
         <hr />
     </fieldset>
-    </form> -->
+    </form>
