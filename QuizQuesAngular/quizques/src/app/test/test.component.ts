@@ -4,11 +4,26 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { Test } from 'src/models/test';
 import { TestService } from '../services/testservice';
 
+export interface TestElement {
+    id: number;
+    name: string;
+    noOfQues: number;
+    marks: number;
+}
+
+const ELEMENT_DATA: TestElement[] = [
+    {id: 1, name: 'Python', marks: 20, noOfQues: 10},
+    {id: 2, name: 'JS', marks: 10, noOfQues: 5},
+    {id: 3, name: 'C++', marks: 25, noOfQues: 25}
+];
+
+
 @Component({
     selector: 'app-test',
     templateUrl: './test.component.html',
     styleUrls: ['./test.component.scss']
 })
+
 
 export class TestComponent implements OnInit {
 
@@ -16,6 +31,9 @@ export class TestComponent implements OnInit {
     testService: TestService;
     @Output() addNotificationCount: EventEmitter<number>;
     disArr: Test[] =[];
+
+    displayedColumns: string[] = ['id', 'name', 'marks', 'noOfQues'];
+    dataSource = ELEMENT_DATA;
 
     testForm = this.formBuilder.group({
         id: 0,

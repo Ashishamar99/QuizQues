@@ -4,6 +4,49 @@
     
     <br /><hr />
 
+
+    <!-- START OF ANGULAR MATERIAL TABLE -->
+    <table style="width: 100%;" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <!-- Marks Column -->
+        <ng-container matColumnDef="marks">
+            <th mat-header-cell *matHeaderCellDef> Marks </th>
+            <td mat-cell *matCellDef="let element"> {{element.marks}} </td>
+        </ng-container>
+
+        <!-- No of Questions Column -->
+        <ng-container matColumnDef="noOfQues">
+            <th mat-header-cell *matHeaderCellDef> No of Questions </th>
+            <td mat-cell *matCellDef="let element"> {{element.noOfQues}} </td>
+        </ng-container>
+
+        <!-- Button Column -->
+        <!-- <ng-container matColumnDef="viewTest">
+          <th mat-header-cell *matHeaderCellDef> View Details </th>
+            <td><button [routerLink]="['/viewtest']" mat-button color="primary">View Test Details.</button></td>
+        </ng-container> -->
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+
+<!--     USING BOOTSTRAP TABLE.
     <table class="table table-dark table-striped">
 
         <thead>
@@ -24,7 +67,7 @@
             </ng-container>
         </tr>
     
-    </table>
+    </table> -->
     <hr />
 
     <form class="form" [formGroup]="testForm" (ngSubmit)="onSubmit()">

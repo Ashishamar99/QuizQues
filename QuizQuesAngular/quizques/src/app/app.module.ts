@@ -22,6 +22,7 @@ import { TestService } from './services/testservice';
 import { ViewtestComponent } from './viewtest/viewtest.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { MatSliderModule } from '@angular/material/slider';
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatSliderModule
+    MatSliderModule,
+    MatTableModule
   ],
   providers: [QuizGuard, StudentGuard, FacultyGuard, TestService],
   bootstrap: [AppComponent]

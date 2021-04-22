@@ -304,4 +304,58 @@ testForm = this.formBuilder.group({
 ----------------------------------------------------------------------------------------------------------------------------------------
 Day 12
 
+- ### We will move onto angular materials.
+
+  - ### Backup 1 - https://github.com/Ashishamar99/QuizQues/commit/54bbd906847c056bc9d5a5e0b3497ae457660eeb
+  - ### Backup 2 - https://github.com/Ashishamar99/QuizQues/commit/10ab8b94db5f5e6b904b502efc7033e75e708c01
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+#### Angular Materials
+- Use ```add @angular/material``` Command inside your parent angular folder to add angular materials. Link -> https://material.angular.io/guide/getting-started
+
+- Here, we will be adding a slider. After angular material is installed, we will import it in the ```app.module.ts``` as shown below.
+```
+import { MatSliderModule } from '@angular/material/slider';
+
+@NgModule({
+  ...
+  ...
+
+  imports: [
+    ...
+    ...
+    MatSliderModule,
+    ...
+    ...
+  ],
+  ...
+  ...
+
+```
+
+- Now let's display the component as shown. We will be displaying this in ```app.component.html```.
+```
+<mat-slider min="1" max="100" step="1" value="1"></mat-slider>
+```
+
+#### Material Table
+
+- We import material table the same way we did for material slider.
+```
+import { MatTableModule } from '@angular/material/table';
+...
+...
+imports: [
+  ...
+  ...
+  MatTableModule,
+  ...
+  ...
+```
+- We will have to use ```dataSource``` to interpolate values from the typescript file to the html file. It's similar to a JSON object where we call values using the 'dot' operator.
+----------------------------------------------------------------------------------------------------------------------------------------
+Day 13
+-
+
 ----------------------------------------------------------------------------------------------------------------------------------------
